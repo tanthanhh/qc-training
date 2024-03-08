@@ -12,7 +12,7 @@ describe('Api testing', () => {
         });
     });
 
-    it('Test generate tokenn', function () {
+    it('Test generate token', function () {
         cy.request({
             method: 'POST',
             url: apiRequest.addUser,
