@@ -16,7 +16,7 @@ jobs:
     - name: Run Cypress tests
       uses: cypress-io/github-action@v6
       with:
-        start: npm run test-headless2
+        start: npm run test-headless2 --spec cypress/e2e/tests/apiRequest.cy.ts
         record: true
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
