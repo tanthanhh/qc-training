@@ -4,7 +4,7 @@
   "description": "Cypresstraining",
   "main": "index.js",
   "scripts": {
-    "test-headless": "cypress run --headless --browser chrome --spec cypress/e2e/**",
+    "test-headless": "cypress run --headless --browser chrome --spec cypress/e2e/tests/apiRequest.cy.ts",
     "test-headless2": "cypress run --browser=chrome",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
