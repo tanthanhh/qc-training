@@ -1,3 +1,5 @@
+import testRenderPage from "../pages/testRenderPage";
+
 describe('Test render page', () => {
     beforeEach(() => {
         Cypress.on('uncaught:exception', (err, runnable) => {
@@ -10,25 +12,25 @@ describe('Test render page', () => {
     });
 
     it('Test render page', () => {
-        cy.get('.element-group').each(($el, index, $list) => {
+        cy.get(testRenderPage.mainCate).each(($el, index, $list) => {
             cy.wait(1000);
-            cy.wrap($el).click().find('.btn-light').then((btn) => {
-                cy.wrap(btn).each(($btn, index, $list) => {
-                    let text = $btn.text();
-                    cy.wrap($btn).click();
+            cy.wrap($el).click().find(testRenderPage.subCate).then((subCate) => {
+                cy.wrap(subCate).each(($sub, index, $list) => {
+                    let text = $sub.text();
+                    cy.wrap($sub).click();
 
                     switch (text) {
                         case 'Book Store':
-                            cy.get('#searchBox-wrapper').should('be.visible', {timeout: 4000});
+                            cy.get(testRenderPage.searchBoxCate).should('be.visible', {timeout: 4000});
                             break;
                         case 'Profile':
-                            cy.get('#notLoggin-wrapper').should('be.visible', {timeout: 4000});
+                            cy.get(testRenderPage.profileCate).should('be.visible', {timeout: 4000});
                             break;
                         case 'Book Store API':
-                            cy.get('#operations-tag-Account').should('be.visible', {timeout: 10000});
+                            cy.get(testRenderPage.bookStoreApiCate).should('be.visible', {timeout: 10000});
                             break;
                         default:
-                            cy.get('h1').should('have.text', text);
+                            cy.get(testRenderPage.headerPage).should('have.text', text);
                     }
 
                     cy.wait(1000);

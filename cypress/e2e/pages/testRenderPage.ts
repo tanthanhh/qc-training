@@ -1,11 +1,11 @@
-let pageSelectors = {
-    'Buttons': 'div.col-12.mt-4.col-md-6 > div:nth-child(2) > h1',
-    'Links': '#linkWrapper > h1',
-    'Broken Links - Images': 'div.col-12.mt-4.col-md-6 > div:nth-child(2) > h1',
-    'Upload and Download': 'div.col-12.mt-4.col-md-6 > div:nth-child(2) > h1',
-    'Web Tables': 'div.col-12.mt-4.col-md-6 > div:nth-child(2) > h1',
-    'Dynamic Properties': 'div.col-12.mt-4.col-md-6 > div:nth-child(2) > h1',
-    'webTables': 'div.col-12.mt-4.col-md-6 > h1',
-};
+const testRenderPage = {
+    mainCate: '.element-group',
+    subCate: '.btn-light',
+    headerPage: 'h1',
 
-export default pageSelectors;
+    searchBoxCate: '#searchBox-wrapper',
+    profileCate: '#notLoggin-wrapper',
+    bookStoreApiCate: '#operations-tag-Account',
+}
+
+export default testRenderPage;
